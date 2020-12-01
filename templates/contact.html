@@ -7,27 +7,27 @@
 </div>
 <div class="container px-4 mb-4">
 <h1 class="text-center">Contact Us</h1>
-<form>
+<form method="post" action="/contact">
+  {% csrf_token %}
   <div class="form-group">
     <label for="exampleFormControlInput1">Name</label>
     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlInput1">Contact Number</label>
+    <label for="exampleFormControlInput2">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput3">Contact Number</label>
     <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your Contact Number">
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Email">
-  </div>
-  
-  <div class="form-group">
     <label for="desc">Tell me what do you want to contact for:</label>
     <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
   </div>
+  <button class="btn btn-primary" type="submit" value="submit">Submit</button>
 </form>
-<button class="btn btn-primary" type="submit">Submit</button>
 </div>
 
 {% endblock body %}
